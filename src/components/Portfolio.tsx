@@ -16,8 +16,8 @@ const projects = [
     description:
       "A company profile website and an SNBT tryout platform with professional data analysis to support evaluation and decision-making.",
     stack: "Next.js",
-    url: "https://scholarify.id/",
-    repoUrl: "#",
+    url: "https://scholarify-academy.vercel.app/",
+    repoUrl: "https://github.com/ZayeenJavas313/Company-Profile---Scholarify-Academy/tree/main/landing-page",
     tags: ["Company Profile", "SNBT Tryout", "Data Analysis"],
   },
 ];
