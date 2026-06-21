@@ -1,20 +1,19 @@
 import { ExternalLinkIcon, FolderGit2Icon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/providers/language-provider";
 
-const projects = [
+const PROJECT_KEYS = [
   {
-    name: "Web Aira Dry Cleaning",
-    description:
-      "A modern landing page and service catalog for a dry-cleaning business — includes service pricing, pickup/delivery info, location map, and a contact form for customer inquiries.",
+    nameKey: "portfolio.airaName",
+    descKey: "portfolio.airaDesc",
     stack: "React",
     url: "https://aira-dry-cleaning.vercel.app/",
     repoUrl: "https://github.com/ZayeenJavas313/Aira-Dry-Cleaning",
     tags: ["Company Profile", "Landing Page", "System CRUD", "Payment Gateway"],
   },
   {
-    name: "Web Scholarify Academy",
-    description:
-      "A company profile website and an SNBT tryout platform with professional data analysis to support evaluation and decision-making.",
+    nameKey: "portfolio.scholarifyName",
+    descKey: "portfolio.scholarifyDesc",
     stack: "Next.js",
     url: "https://scholarify-academy.vercel.app/",
     repoUrl: "https://github.com/ZayeenJavas313/Company-Profile---Scholarify-Academy/tree/main/landing-page",
@@ -23,19 +22,27 @@ const projects = [
 ];
 
 export function Portfolio() {
+  const { t } = useTranslation();
+
+  const projects = PROJECT_KEYS.map((p) => ({
+    ...p,
+    name: t(p.nameKey),
+    description: t(p.descKey),
+  }));
+
   return (
     <section id="work" className="bg-background text-foreground py-20">
       <div className="mx-auto w-full max-w-5xl px-4">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div>
             <div className="inline-flex rounded-lg border px-4 py-1 text-sm">
-              Portfolio
+              {t("portfolio.badge")}
             </div>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
-              Featured projects
+              {t("portfolio.title")}
             </h2>
             <p className="mt-3 max-w-2xl text-foreground/80">
-              Selected projects — focused on clean UI, clear user flow, and production-ready implementations.
+              {t("portfolio.description")}
             </p>
           </div>
         </div>
@@ -43,7 +50,7 @@ export function Portfolio() {
         <div className="mt-10 grid gap-6">
           {projects.map((project) => (
             <div
-              key={project.name}
+              key={project.nameKey}
               className="rounded-3xl border bg-card p-8 shadow-lg shadow-primary/10"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
@@ -73,12 +80,12 @@ export function Portfolio() {
                   <Button className="rounded-full" variant="outline" asChild>
                     <a href={project.repoUrl} target="_blank" rel="noreferrer">
                       <FolderGit2Icon className="size-4 me-2" />
-                      Repo
+                      {t("portfolio.repo")}
                     </a>
                   </Button>
                   <Button className="rounded-full" asChild>
                     <a href={project.url} target="_blank" rel="noreferrer">
-                      Live Demo
+                      {t("portfolio.liveDemo")}
                       <ExternalLinkIcon className="size-4 ms-2" />
                     </a>
                   </Button>
@@ -91,4 +98,3 @@ export function Portfolio() {
     </section>
   );
 }
-

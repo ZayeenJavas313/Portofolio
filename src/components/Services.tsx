@@ -1,44 +1,14 @@
 import gsap from "gsap";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "@/providers/language-provider";
 
 type Project = {
   color: string;
   src: string;
-  title: string;
-  description: string;
+  titleKey: string;
+  descKey: string;
 };
-
-const projects: Project[] = [
-  {
-    color: "#0f172a",
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
-    title: "Web App Development",
-    description:
-      "Build websites and web apps end-to-end—auth, dashboards, admin panels, and API integrations.",
-  },
-  {
-    color: "#1e293b",
-    src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
-    title: "UI / UX & Frontend",
-    description:
-      "Modern, responsive UI with accessibility and performance in mind (smooth animations when needed).",
-  },
-  {
-    color: "#475569",
-    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80",
-    title: "Backend API & Database",
-    description:
-      "REST APIs, database design, query optimization, and maintainable backend architecture.",
-  },
-  {
-    color: "#1f2937",
-    src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80",
-    title: "Deployment & Maintenance",
-    description:
-      "Deployment to hosting/cloud, environment setup, basic monitoring, and post-launch maintenance.",
-  },
-];
 
 const scaleAnimation = {
   closed: {
@@ -58,8 +28,54 @@ const scaleAnimation = {
 
 type ModalState = { active: boolean; index: number };
 
+const SERVICE_KEYS: Project[] = [
+  {
+    color: "#0f172a",
+    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
+    titleKey: "services.webDev",
+    descKey: "services.webDevDesc",
+  },
+  {
+    color: "#1e293b",
+    src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
+    titleKey: "services.uiUx",
+    descKey: "services.uiUxDesc",
+  },
+  {
+    color: "#475569",
+    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80",
+    titleKey: "services.backend",
+    descKey: "services.backendDesc",
+  },
+  {
+    color: "#1f2937",
+    src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80",
+    titleKey: "services.deployment",
+    descKey: "services.deploymentDesc",
+  },
+  {
+    color: "#312e81",
+    src: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80",
+    titleKey: "services.chatbot",
+    descKey: "services.chatbotDesc",
+  },
+  {
+    color: "#166534",
+    src: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80",
+    titleKey: "services.payment",
+    descKey: "services.paymentDesc",
+  },
+];
+
 export function Services() {
   const [modal, setModal] = useState<ModalState>({ active: false, index: 0 });
+  const { t } = useTranslation();
+
+  const projects = SERVICE_KEYS.map((s) => ({
+    ...s,
+    title: t(s.titleKey),
+    description: t(s.descKey),
+  }));
 
   return (
     <section
@@ -69,11 +85,10 @@ export function Services() {
       <div className="mx-auto max-w-7xl px-5 md:px-0">
         <div className="flex flex-col md:flex-row justify-between gap-6 px-4">
           <h2 className="text-4xl sm:text-5xl md:text-7xl tracking-tight font-bold">
-            Services.
+            {t("services.title")}
           </h2>
           <p className="max-w-md font-medium text-muted-foreground">
-            End-to-end delivery for web products: modern UI, reliable backend,
-            and production-ready deployments.
+            {t("services.description")}
           </p>
         </div>
         <div className="relative flex min-h-[60vh] md:min-h-[70vh] items-center justify-center">
@@ -81,7 +96,7 @@ export function Services() {
             {projects.map((project, index) => (
               <Project
                 index={index}
-                key={project.title}
+                key={project.titleKey}
                 description={project.description}
                 setModal={setModal}
                 title={project.title}
@@ -123,7 +138,7 @@ function Project({ index, title, description, setModal }: ProjectProps) {
 
 type ModalProps = {
   modal: ModalState;
-  projects: Project[];
+  projects: { color: string; src: string; title: string; titleKey: string; descKey: string; description: string }[];
 };
 
 function Modal({ modal, projects }: ModalProps) {
@@ -187,7 +202,7 @@ function Modal({ modal, projects }: ModalProps) {
           {projects.map((project) => (
             <div
               className="flex h-full w-full items-center justify-center"
-              key={project.title}
+              key={project.titleKey}
               style={{ backgroundColor: project.color }}
             >
               <img
@@ -206,16 +221,6 @@ function Modal({ modal, projects }: ModalProps) {
         ref={cursor}
         variants={scaleAnimation}
       />
-      <motion.div
-        animate={active ? "enter" : "closed"}
-        className="pointer-events-none fixed z-40 flex h-20 w-20 items-center justify-center rounded-full bg-transparent font-light text-sm text-white"
-        initial="initial"
-        ref={cursorLabel}
-        variants={scaleAnimation}
-      >
-        View
-      </motion.div>
     </>
   );
 }
-

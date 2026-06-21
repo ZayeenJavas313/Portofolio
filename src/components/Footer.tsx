@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/providers/language-provider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -186,6 +187,7 @@ const MarqueeItem = () => (
 );
 
 export function Footer() {
+  const { t } = useTranslation();
   const wrapperRef = useRef<HTMLDivElement>(null);
   const giantTextRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -270,7 +272,7 @@ export function Footer() {
               ref={headingRef}
               className="text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-12 text-center"
             >
-              Let's build something.
+              {t("footer.heading")}
             </h2>
 
             <div ref={linksRef} className="flex flex-col items-center gap-6 w-full">
@@ -292,7 +294,7 @@ export function Footer() {
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <path d="m22 7-10 5L2 7" />
                   </svg>
-                  Send Email
+                  {t("footer.sendEmail")}
                 </MagneticButton>
 
                 <MagneticButton
@@ -316,7 +318,7 @@ export function Footer() {
                     <line x1="8" y1="2" x2="8" y2="6" />
                     <line x1="3" y1="10" x2="21" y2="10" />
                   </svg>
-                  WhatsApp
+                  {t("footer.whatsapp")}
                 </MagneticButton>
               </div>
 
@@ -328,7 +330,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground"
                 >
-                  GitHub
+                  {t("footer.github")}
                 </MagneticButton>
                 <MagneticButton
                   as="a"
@@ -337,7 +339,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground"
                 >
-                  LinkedIn
+                  {t("footer.linkedin")}
                 </MagneticButton>
                 <MagneticButton
                   as="a"
@@ -346,7 +348,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground"
                 >
-                  Instagram
+                  {t("footer.instagram")}
                 </MagneticButton>
               </div>
             </div>
@@ -354,18 +356,18 @@ export function Footer() {
 
           <div className="relative z-20 w-full pb-8 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1">
-              © 2026 Ahmad Na&apos;im. All rights reserved.
+              {t("footer.copyright")}
             </div>
 
             <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-border/50">
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">
-                Built with
+                {t("footer.builtWith")}
               </span>
               <span className="text-sm md:text-base">
                 ☕
               </span>
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">
-                &amp; lots of
+                {t("footer.lotsOf")}
               </span>
               <span className="animate-footer-heartbeat text-sm md:text-base text-destructive ml-1">
                 ❤
@@ -397,4 +399,3 @@ export function Footer() {
     </>
   );
 }
-

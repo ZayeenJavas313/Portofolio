@@ -4,6 +4,7 @@ import {
   type Testimonial,
 } from "@/components/ui/testimonials-columns";
 import { EmptyTestimonial } from "@/components/EmptyTestimonial";
+import { useTranslation } from "@/providers/language-provider";
 
 const testimonials: Testimonial[] = [
   {
@@ -63,6 +64,8 @@ const testimonials: Testimonial[] = [
 ];
 
 export function TestimonialsSection() {
+  const { t } = useTranslation();
+
   if (testimonials.length === 0) {
     return <EmptyTestimonial />;
   }
@@ -82,13 +85,13 @@ export function TestimonialsSection() {
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
         >
           <div className="flex justify-center">
-            <div className="border py-1 px-4 rounded-lg">Testimonials</div>
+            <div className="border py-1 px-4 rounded-lg">{t("testimonials.badge")}</div>
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5 text-center">
-            Kind words from people I've worked with
+            {t("testimonials.title")}
           </h2>
           <p className="text-center mt-5 opacity-75">
-            A few words from clients, teammates, and collaborators.
+            {t("testimonials.description")}
           </p>
         </motion.div>
 
@@ -109,4 +112,3 @@ export function TestimonialsSection() {
     </section>
   );
 }
-

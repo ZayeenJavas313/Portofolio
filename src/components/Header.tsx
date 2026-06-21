@@ -3,16 +3,19 @@ import { createPortal } from "react-dom";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { LanguageToggle } from "@/components/ui/language-toggle";
 import { useScroll } from "@/hooks/use-scroll";
+import { useTranslation } from "@/providers/language-provider";
 import { cn } from "@/lib/utils";
 
-const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
-];
+const NAV_KEYS = [
+  { key: "home", href: "#home" },
+  { key: "about", href: "#about" },
+  { key: "services", href: "#services" },
+  { key: "pricing", href: "#pricing" },
+  { key: "work", href: "#work" },
+  { key: "contact", href: "#contact" },
+] as const;
 
 const WHATSAPP_URL =
   "https://wa.me/6287841549562?text=Halo%20Ahmad%2C%20saya%20ingin%20diskusi%20project.";
@@ -20,6 +23,7 @@ const WHATSAPP_URL =
 export function Header() {
   const [open, setOpen] = useState(false);
   const scrolled = useScroll(10);
+  const { t } = useTranslation();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -40,23 +44,25 @@ export function Header() {
           <Wordmark className="h-4" />
         </a>
         <div className="hidden items-center gap-2 md:flex">
-          {links.map((link) => (
+          {NAV_KEYS.map((link) => (
             <a
-              key={link.label}
+              key={link.key}
               className={buttonVariants({ variant: "ghost" })}
               href={link.href}
             >
-              {link.label}
+              {t(`nav.${link.key}`)}
             </a>
           ))}
+          <LanguageToggle />
           <ThemeToggle />
           <Button asChild>
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-              Let&apos;s Talk
+              {t("nav.letsTalk")}
             </a>
           </Button>
         </div>
         <div className="flex items-center gap-2 md:hidden">
+          <LanguageToggle />
           <ThemeToggle />
           <Button
             size="icon"
@@ -72,9 +78,9 @@ export function Header() {
       </nav>
       <MobileMenu open={open}>
         <div className="grid gap-y-2">
-          {links.map((link) => (
+          {NAV_KEYS.map((link) => (
             <a
-              key={link.label}
+              key={link.key}
               className={buttonVariants({
                 variant: "ghost",
                 className: "justify-start",
@@ -82,14 +88,14 @@ export function Header() {
               href={link.href}
               onClick={() => setOpen(false)}
             >
-              {link.label}
+              {t(`nav.${link.key}`)}
             </a>
           ))}
         </div>
         <div className="flex flex-col gap-2">
           <Button className="w-full" asChild>
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-              Let&apos;s Talk
+              {t("nav.letsTalk")}
             </a>
           </Button>
         </div>

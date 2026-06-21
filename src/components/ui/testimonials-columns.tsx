@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 export type Testimonial = {
   text: string;
@@ -20,22 +21,22 @@ export const TestimonialsColumn = ({
   duration = 10,
 }: Props) => {
   return (
-    <div className={className}>
+    <div className={cn(className, "overflow-hidden relative")}>
       <motion.div
-        animate={{ translateY: "-50%" }}
+        animate={{ y: "-50%" }}
         transition={{
           duration,
           repeat: Infinity,
           ease: "linear",
           repeatType: "loop",
         }}
-        className="flex flex-col gap-6 pb-6 bg-background"
+        className="flex flex-col gap-6 pb-6"
       >
         {[...new Array(2)].map((_, idx) => (
           <React.Fragment key={idx}>
             {testimonials.map(({ text, image, name, role }, i) => (
               <div
-                className="p-10 rounded-3xl border shadow-lg shadow-primary/10 max-w-xs w-full"
+                className="p-10 rounded-3xl border shadow-lg shadow-primary/10 max-w-xs w-full bg-background"
                 key={i}
                 style={{ marginTop: i % 2 === 0 ? 0 : 40 }}
               >
@@ -65,4 +66,3 @@ export const TestimonialsColumn = ({
     </div>
   );
 };
-

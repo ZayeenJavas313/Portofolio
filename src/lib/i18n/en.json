@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "pricing": "Pricing",
+    "work": "Work",
+    "contact": "Contact",
+    "letsTalk": "Let's Talk"
+  },
+  "hero": {
+    "badge": "Available for freelance (Remote)",
+    "title": "Building web products that are fast, clean, and scalable",
+    "subtitle": "I'm Ahmad Na'im, a fullstack web developer based in Yogyakarta. Available for remote work—company profiles, dashboards, and data-driven apps.",
+    "whatsapp": "WhatsApp",
+    "viewProjects": "View Projects",
+    "freeConsultation": "Free Consultation",
+    "contact": "Contact",
+    "email": "ahmdnaim3@gmail.com",
+    "linkedin": "LinkedIn"
+  },
+  "logos": {
+    "title": "Built with",
+    "titleHighlight": "modern tools"
+  },
+  "story": {
+    "titleLine1": "I don't just write code.",
+    "titleLine2": "I design experiences.",
+    "whatIDo": "What I do.",
+    "paragraph": "I'm a fullstack web developer who builds end-to-end web products—from clean UI and smooth interactions to reliable backend systems. I've worked on company profiles, dashboards/admin panels, and data-driven apps. My goal is simple: ship fast, keep it maintainable, and make it feel professional in production.",
+    "quote": "\"Good UI is obvious. Great engineering is invisible.\""
+  },
+  "services": {
+    "title": "Services.",
+    "description": "End-to-end delivery for web products: modern UI, reliable backend, and production-ready deployments.",
+    "webDev": "Web App Development",
+    "webDevDesc": "Build websites and web apps end-to-end—auth, dashboards, admin panels, and API integrations.",
+    "uiUx": "UI / UX & Frontend",
+    "uiUxDesc": "Modern, responsive UI with accessibility and performance in mind.",
+    "backend": "Backend API & Database",
+    "backendDesc": "REST APIs, database design, query optimization, and maintainable backend architecture.",
+    "deployment": "Deployment & Maintenance",
+    "deploymentDesc": "Deployment to hosting/cloud, environment setup, basic monitoring, and post-launch maintenance.",
+    "chatbot": "AI Chatbot",
+    "chatbotDesc": "AI chatbot integration for WhatsApp, Instagram, or website — automated 24/7 customer responses without manual standby.",
+    "payment": "Payment Gateway",
+    "paymentDesc": "Online payment system integration (Midtrans, Xendit, etc.) directly into your website or online store — smoother customer transactions.",
+    "view": "View"
+  },
+  "portfolio": {
+    "badge": "Portfolio",
+    "title": "Featured Projects",
+    "description": "Selected projects — focused on clean UI, clear user flow, and production-ready implementations.",
+    "airaName": "Web Aira Dry Cleaning",
+    "airaDesc": "Helped Aira Dry Cleaning move from manual record-keeping to an online booking system — customers can now check pricing, pickup/delivery schedules, and location without messaging first.",
+    "scholarifyName": "Web Scholarify Academy",
+    "scholarifyDesc": "A company profile website and an SNBT tryout platform with professional data analysis to support evaluation and decision-making.",
+    "repo": "Repo",
+    "liveDemo": "Live Demo"
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "Kind words from people I've worked with",
+    "description": "A few words from clients, teammates, and collaborators."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "card1Title": "Landing Page",
+    "card1Subtitle": "Perfect for SMEs just starting online",
+    "card1Price": "Starting from Rp 800,000",
+    "card2Title": "Company Profile / Online Store",
+    "card2Subtitle": "For established businesses wanting a more professional presence",
+    "card2Price": "Starting from Rp 2,000,000",
+    "card3Title": "Custom (Web + Chatbot + Payment)",
+    "card3Subtitle": "For businesses going full digital — integrated website, AI chatbot, and payment gateway",
+    "card3Price": "Contact for quote",
+    "cta": "Discuss Your Needs",
+    "disclaimer": "*Pricing may vary based on project complexity"
+  },
+  "footer": {
+    "heading": "Let's build something.",
+    "sendEmail": "Send Email",
+    "whatsapp": "WhatsApp",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "copyright": "© 2026 Ahmad Na'im. All rights reserved.",
+    "builtWith": "Built with",
+    "lotsOf": "& lots of"
+  }
+}

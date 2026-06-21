@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "services": "Layanan",
+    "pricing": "Paket",
+    "work": "Proyek",
+    "contact": "Kontak",
+    "letsTalk": "Hubungi Saya"
+  },
+  "hero": {
+    "badge": "Tersedia untuk freelance (Remote)",
+    "title": "Membangun produk web yang cepat, bersih, dan skalabel",
+    "subtitle": "Saya Ahmad Na'im, fullstack web developer berbasis di Yogyakarta. Tersedia untuk remote work — company profile, dashboard, dan aplikasi data-driven.",
+    "whatsapp": "WhatsApp",
+    "viewProjects": "Lihat Proyek",
+    "freeConsultation": "Konsultasi Gratis",
+    "contact": "Kontak",
+    "email": "ahmdnaim3@gmail.com",
+    "linkedin": "LinkedIn"
+  },
+  "logos": {
+    "title": "Dibangun dengan",
+    "titleHighlight": "tools modern"
+  },
+  "story": {
+    "titleLine1": "Saya tidak sekadar menulis kode.",
+    "titleLine2": "Saya merancang pengalaman.",
+    "whatIDo": "Apa yang saya lakukan.",
+    "paragraph": "Saya seorang fullstack web developer yang membangun produk web end-to-end — dari UI yang bersih dan interaksi yang mulus hingga sistem backend yang andal. Saya telah mengerjakan company profile, dashboard/admin panel, dan aplikasi data-driven. Tujuan saya sederhana: deliver cepat, jaga maintainability, dan pastikan semuanya terasa profesional di production.",
+    "quote": "\"UI yang baik itu terlihat. Engineering yang hebat itu tidak terlihat.\""
+  },
+  "services": {
+    "title": "Layanan.",
+    "description": "Pengiriman end-to-end untuk produk web: UI modern, backend andal, dan deployment siap produksi.",
+    "webDev": "Pengembangan Web",
+    "webDevDesc": "Membangun website dan web app end-to-end — auth, dashboard, admin panel, dan integrasi API.",
+    "uiUx": "UI / UX & Frontend",
+    "uiUxDesc": "UI modern dan responsif dengan aksesibilitas dan performa yang optimal.",
+    "backend": "Backend API & Database",
+    "backendDesc": "REST API, desain database, optimasi query, dan arsitektur backend yang mudah dipelihara.",
+    "deployment": "Deployment & Maintenance",
+    "deploymentDesc": "Deployment ke hosting/cloud, pengaturan environment, monitoring dasar, dan maintenance pasca-launch.",
+    "chatbot": "Chatbot AI",
+    "chatbotDesc": "Integrasi chatbot AI untuk WhatsApp, Instagram, atau website — auto-reply pertanyaan customer 24/7, tanpa perlu standby manual.",
+    "payment": "Payment Gateway",
+    "paymentDesc": "Integrasi sistem pembayaran online (Midtrans, Xendit, dll) langsung ke website atau toko online — transaksi customer makin lancar.",
+    "view": "Lihat"
+  },
+  "portfolio": {
+    "badge": "Portofolio",
+    "title": "Proyek Unggulan",
+    "description": "Proyek terpilih — fokus pada UI yang bersih, alur pengguna yang jelas, dan implementasi siap produksi.",
+    "airaName": "Web Aira Dry Cleaning",
+    "airaDesc": "Membantu Aira Dry Cleaning beralih dari pencatatan manual ke sistem booking online — pelanggan kini bisa cek harga, jadwal pickup/delivery, dan lokasi tanpa harus chat dulu.",
+    "scholarifyName": "Web Scholarify Academy",
+    "scholarifyDesc": "Website company profile dan platform tryout SNBT dengan analisis data profesional untuk mendukung evaluasi dan pengambilan keputusan.",
+    "repo": "Repo",
+    "liveDemo": "Demo Live"
+  },
+  "testimonials": {
+    "badge": "Testimoni",
+    "title": "Kata-kata baik dari orang yang pernah bekerja sama",
+    "description": "Beberapa kata dari klien, rekan tim, dan kolaborator."
+  },
+  "pricing": {
+    "title": "Paket Layanan",
+    "card1Title": "Landing Page",
+    "card1Subtitle": "Cocok untuk UMKM yang baru mulai online",
+    "card1Price": "Mulai Rp 800.000",
+    "card2Title": "Company Profile / Toko Online",
+    "card2Subtitle": "Untuk bisnis yang sudah berjalan dan butuh tampil lebih profesional",
+    "card2Price": "Mulai Rp 2.000.000",
+    "card3Title": "Custom (Web + Chatbot + Payment)",
+    "card3Subtitle": "Untuk bisnis yang mau full digital — website, chatbot AI, dan payment gateway terintegrasi",
+    "card3Price": "Hubungi untuk quote",
+    "cta": "Diskusi Kebutuhanmu",
+    "disclaimer": "*Harga dapat berubah sesuai kompleksitas kebutuhan"
+  },
+  "footer": {
+    "heading": "Mari bangun sesuatu.",
+    "sendEmail": "Kirim Email",
+    "whatsapp": "WhatsApp",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "copyright": "© 2026 Ahmad Na'im. All rights reserved.",
+    "builtWith": "Dibangun dengan",
+    "lotsOf": "& penuh"
+  }
+}
