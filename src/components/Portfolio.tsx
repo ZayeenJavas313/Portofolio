@@ -7,7 +7,7 @@ const projects = [
     description:
       "A modern landing page and service catalog for a dry-cleaning business — includes service pricing, pickup/delivery info, location map, and a contact form for customer inquiries.",
     stack: "React",
-    url: "#",
+    url: "https://aira-dry-cleaning.vercel.app/",
     repoUrl: "https://github.com/ZayeenJavas313/Aira-Dry-Cleaning",
     tags: ["Company Profile", "Landing Page", "System CRUD", "Payment Gateway"],
   },
