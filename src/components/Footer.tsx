@@ -361,14 +361,14 @@ export function Footer() {
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">
                 Built with
               </span>
-              <span className="animate-footer-heartbeat text-sm md:text-base text-destructive">
-                ❤
+              <span className="text-sm md:text-base">
+                ☕
               </span>
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">
                 &amp; lots of
               </span>
-              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">
-                ☕
+              <span className="animate-footer-heartbeat text-sm md:text-base text-destructive ml-1">
+                ❤
               </span>
             </div>
 
