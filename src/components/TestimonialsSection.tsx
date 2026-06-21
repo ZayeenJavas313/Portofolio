@@ -1,12 +1,9 @@
 import { motion } from "motion/react";
+import {
+  TestimonialsColumn,
+  type Testimonial,
+} from "@/components/ui/testimonials-columns";
 import { EmptyTestimonial } from "@/components/EmptyTestimonial";
-
-type Testimonial = {
-  text: string;
-  image: string;
-  name: string;
-  role: string;
-};
 
 const testimonials: Testimonial[] = [
   {
@@ -21,12 +18,58 @@ const testimonials: Testimonial[] = [
     name: "Rizky Hidayat",
     role: "Founder, Scholarify Academy",
   },
+  {
+    text: "Shipped our redesign 2 weeks ahead of schedule. Best frontend engineer we've worked with — communication was crystal clear the whole way.",
+    image: "https://randomuser.me/api/portraits/women/32.jpg",
+    name: "Sarah Lestari",
+    role: "Product Manager",
+  },
+  {
+    text: "A rare developer who understands both design and code. The animations made our landing page stand out and conversion rate improved significantly.",
+    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    name: "Dewi Permata",
+    role: "Marketing Lead",
+  },
+  {
+    text: "His frontend skills are top-notch. React components were well-structured, reusable, and easy to maintain. Our dev team learned a lot from his code.",
+    image: "https://randomuser.me/api/portraits/women/50.jpg",
+    name: "Maya Anggraini",
+    role: "Senior Engineer",
+  },
+  {
+    text: "Took our vague ideas and turned them into a polished product. The UI/UX suggestions he made were spot-on. Will definitely work together again.",
+    image: "https://randomuser.me/api/portraits/men/36.jpg",
+    name: "Andi Pratama",
+    role: "CEO, Startup",
+  },
+  {
+    text: "Responsive, communicative, and always meets deadlines. He cares about the product, not just the code. A true professional.",
+    image: "https://randomuser.me/api/portraits/women/17.jpg",
+    name: "Fitri Handayani",
+    role: "Project Manager",
+  },
+  {
+    text: "Clean code, clean design, clean communication. Three things I value most in a developer, and Ahmad delivers all of them consistently.",
+    image: "https://randomuser.me/api/portraits/women/91.jpg",
+    name: "Sari Indah",
+    role: "Design Director",
+  },
+  {
+    text: "The attention to micro-interactions elevated the entire product. Users notice the difference — and they love it.",
+    image: "https://randomuser.me/api/portraits/men/94.jpg",
+    name: "Doni Firmansyah",
+    role: "CTO",
+  },
 ];
 
 export function TestimonialsSection() {
   if (testimonials.length === 0) {
     return <EmptyTestimonial />;
   }
+
+  const first = testimonials.slice(0, 3);
+  const second = testimonials.slice(3, 6);
+  const third = testimonials.slice(6, 9);
 
   return (
     <section className="bg-background my-20 relative">
@@ -49,32 +92,18 @@ export function TestimonialsSection() {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map(({ text, image, name, role }) => (
-            <motion.div
-              key={name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              viewport={{ once: true }}
-              className="rounded-3xl border shadow-lg shadow-primary/10 p-8 flex flex-col justify-between"
-            >
-              <p className="text-foreground/90 leading-relaxed">{text}</p>
-              <div className="flex items-center gap-3 mt-6 pt-4 border-t">
-                <img
-                  width={44}
-                  height={44}
-                  src={image}
-                  alt={name}
-                  className="h-11 w-11 rounded-full object-cover"
-                />
-                <div>
-                  <p className="font-semibold tracking-tight">{name}</p>
-                  <p className="text-sm text-muted-foreground">{role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
+          <TestimonialsColumn testimonials={first} duration={15} />
+          <TestimonialsColumn
+            testimonials={second}
+            className="hidden md:block"
+            duration={19}
+          />
+          <TestimonialsColumn
+            testimonials={third}
+            className="hidden lg:block"
+            duration={17}
+          />
         </div>
       </div>
     </section>

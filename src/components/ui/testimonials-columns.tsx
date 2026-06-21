@@ -37,6 +37,7 @@ export const TestimonialsColumn = ({
               <div
                 className="p-10 rounded-3xl border shadow-lg shadow-primary/10 max-w-xs w-full"
                 key={i}
+                style={{ marginTop: i % 2 === 0 ? 0 : 40 }}
               >
                 <div>{text}</div>
                 <div className="flex items-center gap-2 mt-5">
