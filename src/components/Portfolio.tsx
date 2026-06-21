@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from "lucide-react";
+import { ExternalLinkIcon, FolderGit2Icon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
@@ -8,6 +8,7 @@ const projects = [
       "A modern landing page and service catalog for a dry-cleaning business — includes service pricing, pickup/delivery info, location map, and a contact form for customer inquiries.",
     stack: "React",
     url: "#",
+    repoUrl: "#",
     tags: ["Company Profile", "Landing Page", "System CRUD", "Payment Gateway"],
   },
   {
@@ -16,6 +17,7 @@ const projects = [
       "A company profile website and an SNBT tryout platform with professional data analysis to support evaluation and decision-making.",
     stack: "Next.js",
     url: "https://scholarify.id/",
+    repoUrl: "#",
     tags: ["Company Profile", "SNBT Tryout", "Data Analysis"],
   },
 ];
@@ -68,6 +70,12 @@ export function Portfolio() {
                 </div>
 
                 <div className="flex gap-3 shrink-0">
+                  <Button className="rounded-full" variant="outline" asChild>
+                    <a href={project.repoUrl} target="_blank" rel="noreferrer">
+                      <FolderGit2Icon className="size-4 me-2" />
+                      Repo
+                    </a>
+                  </Button>
                   <Button className="rounded-full" asChild>
                     <a href={project.url} target="_blank" rel="noreferrer">
                       Live Demo
