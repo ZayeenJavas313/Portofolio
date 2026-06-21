@@ -5,8 +5,32 @@ import {
 } from "@/components/ui/testimonials-columns";
 import { EmptyTestimonial } from "@/components/EmptyTestimonial";
 
-// Isi dengan testimoni asli kamu kalau sudah ada.
-const testimonials: Testimonial[] = [];
+const testimonials: Testimonial[] = [
+  {
+    text: "Working with Ahmad was a great experience. He translated our complex requirements into a clean, well-structured web app. Communication was smooth throughout.",
+    image: "https://randomuser.me/api/portraits/women/32.jpg",
+    name: "Sarah Lestari",
+    role: "Product Manager, EdTech",
+  },
+  {
+    text: "The Aira Dry Cleaning website exceeded our expectations. Fast, responsive, and the design perfectly captures our brand identity. Highly recommended!",
+    image: "https://randomuser.me/api/portraits/men/44.jpg",
+    name: "Budi Santoso",
+    role: "Owner, Aira Dry Cleaning",
+  },
+  {
+    text: "Professional, reliable, and detail-oriented. Delivered the Scholarify project on time with zero issues. The platform handles thousands of users smoothly.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    name: "Rizky Hidayat",
+    role: "Founder, Scholarify Academy",
+  },
+  {
+    text: "Took our vague ideas and turned them into a polished product. The UI/UX suggestions he made were spot-on. Will definitely work together again.",
+    image: "https://randomuser.me/api/portraits/men/36.jpg",
+    name: "Andi Pratama",
+    role: "CEO, Startup",
+  },
+];
 
 export function TestimonialsSection() {
   if (testimonials.length === 0) {
